@@ -169,11 +169,13 @@
     _emailField.autocorrectionType = UITextAutocorrectionTypeNo;
     _emailField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _emailField.text = self.userEmail;
+    _emailField.userInteractionEnabled = false;
 }
 
 - (void)initCellForName:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
     self.nameField = [self configureView:cell.contentView label:NSLocalizedStringFromTableInBundle(@"Name", @"UserVoice", [UserVoice bundle], nil) placeholder:NSLocalizedStringFromTableInBundle(@"“Anonymous”", @"UserVoice", [UserVoice bundle], nil)];
     _nameField.text = self.userName;
+    _nameField.userInteractionEnabled = false;
 }
 
 #pragma mark ===== Misc =====
