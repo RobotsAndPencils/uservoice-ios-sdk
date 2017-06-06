@@ -604,6 +604,12 @@
 - (void)loadView {
     [self initNavigationItem];
     [self registerForKeyboardNotifications];
+    [[[self navigationController] navigationBar] setBarStyle:[[UVStyleSheet instance] preferredBarStyle]];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[[self navigationController] navigationBar] setBarStyle:[[UVStyleSheet instance] preferredBarStyle]];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {

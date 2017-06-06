@@ -19,6 +19,7 @@ static UVStyleSheet *instance;
         instance.preferredStatusBarStyle = UIStatusBarStyleDefault;
         instance.navigationBarTintColor = [UINavigationBar appearance].tintColor;
         instance.navigationBarTranslucency = YES;
+        instance.preferredBarStyle = UIBarStyleDefault;
     }
     return instance;
 }
