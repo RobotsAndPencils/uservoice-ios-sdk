@@ -20,7 +20,9 @@ static UVStyleSheet *instance;
         instance.navigationBarTintColor = [UINavigationBar appearance].tintColor;
         instance.navigationBarTranslucency = YES;
         instance.preferredBarStyle = UIBarStyleDefault;
+        instance.searchBarHideNavigation = true;
     }
+
     return instance;
 }
 

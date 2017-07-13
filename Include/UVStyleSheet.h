@@ -26,5 +26,6 @@
 @property (nonatomic, retain) UIColor *loadingViewBackgroundColor;
 @property (nonatomic, assign) UIStatusBarStyle preferredStatusBarStyle;
 @property (nonatomic, assign) UIBarStyle preferredBarStyle;
+@property (nonatomic, assign) BOOL searchBarHideNavigation;
 
 @end
