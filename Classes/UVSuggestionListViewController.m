@@ -70,7 +70,20 @@
 }
 
 - (void)didSearchSuggestions:(NSArray *)theSuggestions {
-    _searchResults = theSuggestions;
+    // sorting as the list comes back sudo random and is causing blinking in cell rows
+    NSArray *sortedArray = [theSuggestions sortedArrayUsingComparator: ^(UVSuggestion *lhs, UVSuggestion *rhs) {
+        if ([lhs subscriberCount] > [rhs subscriberCount]) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+
+        if ([lhs subscriberCount] < [rhs subscriberCount]) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+
+    _searchResults = sortedArray;
     NSMutableArray *ids = [NSMutableArray arrayWithCapacity:[theSuggestions count]];
     for (UVSuggestion *suggestion in theSuggestions) {
         [ids addObject:[NSNumber numberWithInteger:suggestion.suggestionId]];
